@@ -1,0 +1,102 @@
+﻿<Page x:Class="UP_3.CreatePage"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+      xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+      xmlns:local="clr-namespace:UP_3"
+      mc:Ignorable="d" 
+      d:DesignHeight="500" d:DesignWidth="900"
+      Title="CreatePage">
+    <Grid>
+        <Grid.ColumnDefinitions>
+        <ColumnDefinition Width="240*"/>
+        <ColumnDefinition Width="550*"/>
+    </Grid.ColumnDefinitions>
+    <StackPanel Orientation="Vertical" Margin="5,0">
+        <TextBlock FontFamily="Comic Sans MS"
+                       FontSize="20" 
+                       Margin="5"
+                       Text="Создание сотрудника" 
+                       HorizontalAlignment="Center" 
+                       VerticalAlignment="Center"/>
+        <TextBlock FontSize="12" Text="Идентификатор" FontFamily="MS Reference Sans Serif"/>
+        <TextBox x:Name="id"
+                FontSize="16"
+                     Margin="5"
+                     BorderThickness="1"
+                     BorderBrush="Black" TextChanged="id_TextChanged"
+                     ToolTip="Идентификатор должен быть числом, которое не повторяеться у сотрудников"/>
+        <TextBlock FontSize="12" Text="Фамилия" FontFamily="MS Reference Sans Serif"/>
+        <TextBox x:Name="lastName"
+                FontSize="16"
+                     Margin="5"
+                     BorderThickness="1"
+                     BorderBrush="Black" TextChanged="lastName_TextChanged"
+                     ToolTip="Фамилия может содержать только буквы кириллицы и начинаться с заглавной буквы"/>
+        <TextBlock FontSize="12" Text="Имя" FontFamily="MS Reference Sans Serif"/>
+        <TextBox x:Name="firstName"
+                FontSize="16"
+                     Margin="5"
+                     BorderThickness="1"
+                     BorderBrush="Black" TextChanged="firstName_TextChanged"
+                     ToolTip="Имя может содержать только буквы кириллицы и начинаться с заглавной буквы"/>
+        <TextBlock FontSize="12" Text="Отчество" FontFamily="MS Reference Sans Serif"/>
+        <TextBox x:Name="secondName"
+                FontSize="16"
+                     Margin="5"
+                     BorderThickness="1"
+                     BorderBrush="Black" TextChanged="secondName_TextChanged"
+                     ToolTip="Отчество может содержать только буквы кириллицы и начинаться с заглавной буквы"/>
+        <TextBlock FontSize="12" Text="Серия и номер паспорта" FontFamily="MS Reference Sans Serif"/>
+        <TextBox x:Name="passportId"
+                FontSize="16"
+                     Margin="5"
+                     BorderThickness="1"
+                     BorderBrush="Black" TextChanged="passportId_TextChanged"
+                     ToolTip="Паспорт указывается только десятью числовыми значениями "/>
+        <TextBlock FontSize="12" Text="Номер телефона" FontFamily="MS Reference Sans Serif"/>
+        <TextBox x:Name="phone"
+                FontSize="16"
+                     Margin="5"
+                     BorderThickness="1"
+                     BorderBrush="Black" TextChanged="phone_TextChanged"
+                     ToolTip="Номер телефона может быть в одном из форматов: +7XXXXXXXXXX или 8XXXXXXXXXX"/>
+        <TextBlock FontSize="12" Text="Email" FontFamily="MS Reference Sans Serif"/>
+        <TextBox x:Name="email"
+                FontSize="16"
+                     Margin="5"
+                     BorderThickness="1"
+                     BorderBrush="Black" TextChanged="email_TextChanged"
+                     ToolTip="Email состоит из двух частей - логин и домен почтового сервиса, разделенных @"/>
+        <Button x:Name="createEmployee" 
+                    FontSize="18"
+                    Margin="5"
+                    FontFamily="MS Reference Sans Serif"
+                    Content="Создать сотрудника" Click="createEmployee_Click"/>
+            <StackPanel Orientation="Horizontal">
+                <Image Source="logo.png" Width="40" HorizontalAlignment="Left" Margin="5,0"/>
+                <Button x:Name="exit"
+                    Content="Выход"
+                    Margin="60,5"
+                    FontFamily="MS Reference Sans Serif"
+                    FontSize="18" Click="exit_Click"/>
+            </StackPanel>
+        
+        </StackPanel>
+    <ListView x:Name="employersView" Grid.Column="1" HorizontalAlignment="Stretch" Margin="10" VerticalAlignment="Stretch">
+        <ListView.View>
+            <GridView>
+                <GridViewColumn Header="Id" DisplayMemberBinding="{Binding Path=Id}"/>
+                <GridViewColumn Header="Фамилия" DisplayMemberBinding="{Binding Path=LastName}"/>
+                <GridViewColumn Header="Имя" DisplayMemberBinding="{Binding Path=FirstName}"/>
+                <GridViewColumn Header="Отчество" DisplayMemberBinding="{Binding Path=SecondName}"/>
+                <GridViewColumn Header="Паспорт" DisplayMemberBinding="{Binding Path=Passport}"/>
+                <GridViewColumn Header="Телефон" DisplayMemberBinding="{Binding Path=PhoneNumber}"/>
+                <GridViewColumn Header="Email" DisplayMemberBinding="{Binding Path=Email}"/>
+            </GridView>
+        </ListView.View>
+    </ListView>
+
+
+    </Grid>
+</Page>

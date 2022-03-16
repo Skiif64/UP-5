@@ -1,0 +1,21 @@
+﻿<Window x:Class="UP_3.ErrorWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:UP_3"
+        mc:Ignorable="d"
+        Title="ErrorWindow" Height="200" Width="320" WindowStartupLocation="CenterOwner">
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="100*"/>
+            <RowDefinition Height="80*"/>
+        </Grid.RowDefinitions>
+        
+<TextBlock  Margin="5"  x:Name="errorMessage" FontSize="16" Text="Неправильные данные, идите нахуй" TextWrapping="Wrap" HorizontalAlignment="Center" VerticalAlignment="Center"/>
+        
+            <Button Grid.Row="1" x:Name="ok" Margin="80, 12" FontSize="16" Content="Ок" Click="Ok_Click"/>
+            
+       
+    </Grid>
+</Window>
